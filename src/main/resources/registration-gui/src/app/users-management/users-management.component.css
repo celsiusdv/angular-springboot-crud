@@ -1,0 +1,15 @@
+.parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h1{
+    font-weight: bold;
+    margin: 25px 0px 20px;
+    font-size: xx-large;
+    color: rgb(128, 29, 194);
+}
+button{
+    margin-right: 10px;
+}

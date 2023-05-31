@@ -1,0 +1,51 @@
+<div class="parent">
+    <h1>User Management Pane</h1>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef style="background-color: rgb(150, 97, 209);"> No. </th>
+          <td mat-cell *matCellDef="let element; let i = index;"> {{i}} </td>
+        </ng-container>
+      
+            <!-- Id Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef style="background-color: rgb(99, 209, 97);"> ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+        </ng-container>
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef style="background-color: rgb(150, 97, 209);"> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.userName}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef style="background-color: rgb(150, 97, 209);"> Email </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="manage">
+            <th mat-header-cell *matHeaderCellDef style="background-color: rgb(150, 97, 209);"> Manage </th>
+            <td mat-cell *matCellDef="let element;let indexParameter = index;">
+
+
+              <!-- indexParameter value comes from table elements index, check app-routing-module.ts -->
+                 <button mat-raised-button color="accent"
+                  [routerLink]="['/update-delete',indexParameter]"
+                  [queryParams]="{manage:'1'}">update</button>
+
+
+                  <!-- [queryParams]="{manage:'2'}" value goes to update-delete.component.ts -->
+                 <button mat-raised-button color="warn"
+                  [routerLink]="['/update-delete',indexParameter]" 
+                  [queryParams]="{manage:'2'}">delete</button>
+
+            </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns;"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+</div>

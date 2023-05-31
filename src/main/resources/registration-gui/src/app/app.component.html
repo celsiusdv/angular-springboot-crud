@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+
+    <h1>{{title}}</h1>
+
+    <div class="button-container">
+        <button mat-fab color="accent" routerLink="/">
+          <mat-icon>home</mat-icon>
+        </button>
+    </div>
+
+    <button mat-fab extended color="accent" routerLink="/users-management">
+        <mat-icon>manage_accounts</mat-icon>
+        Users Management
+      </button>
+
+  </mat-toolbar>
+
+  
+  <router-outlet></router-outlet>

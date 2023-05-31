@@ -1,0 +1,55 @@
+<div class="parent">
+    <h1>User Registration</h1>
+
+    <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
+<!-- input for user name -->
+        <mat-form-field class="input-style">
+            <mat-label>Enter a User name</mat-label>
+            <input matInput type="text" formControlName="userName">
+            <mat-error *ngIf="registerControls['userName'].touched && registerControls['userName'].invalid">
+                <label *ngIf="registerControls['userName'].errors && registerControls['userName'].errors['required']">
+                    Empty field.
+                </label>
+                <label *ngIf="registerControls['userName'].errors?.['minlength']">
+                    Name must be at least 3 characters long.
+                </label>
+            </mat-error>
+        </mat-form-field>
+
+<!-- input for email -->
+        <mat-form-field class="input-style">
+            <mat-label>Enter an email</mat-label>
+            <input matInput type="email" formControlName="email">
+            <mat-error *ngIf="registerControls['email'].touched && registerControls['email'].invalid">
+                <label *ngIf="registerControls['email'].errors?.['required']">
+                    Empty field.
+                </label>
+                <label *ngIf="registerControls['email'].errors?.['minlength']">
+                    Email must have at least 9 characters.
+                </label>
+                <label *ngIf="registerControls['email'].errors?.['email']">
+                    Invalid Email.
+                </label>
+            </mat-error>
+        </mat-form-field>
+
+<!-- input for password -->
+        <mat-form-field class="input-style">
+            <mat-label>Enter a password</mat-label>
+            <input matInput type="password" formControlName="password">
+            <mat-error *ngIf="registerControls['password'].touched && registerControls['password'].invalid">
+                <label *ngIf="registerControls['password'].errors && registerControls['password'].errors['required']">
+                    Empty field.
+                </label>
+                <label *ngIf="registerControls['password'].errors?.['minlength']">
+                    Password must be at least 9 characters long.
+                </label>
+            </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="accent">Sign Up</button>
+
+    </form>
+
+    <app-user-list [userList]="exportUserList"></app-user-list>
+</div>

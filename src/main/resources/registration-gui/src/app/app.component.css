@@ -1,0 +1,13 @@
+mat-toolbar{
+    height: 5rem;
+}
+h1{
+    font-weight: bold;
+    margin-top: 10px;
+    color: rgb(62, 62, 62);
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+}
