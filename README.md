@@ -5,15 +5,15 @@ First Angular-Spring-Boot CRUD app, snippet for a starting point
 
 ### Specifications:
 Simple project for a starting point to understand the connection between a java and angular that uses:
-- For Backend:
+#### For Backend:
  - Spring Data JPA
  - MariaDB (RDBMS) for data storage
  - Spring-Boot
-  - Spring Web
+ - Spring Web
 
-- For Frontend:
+#### For Frontend:
  - Angular
-  - Typescript
+ - Typescript
  - Html
  - Css
 
